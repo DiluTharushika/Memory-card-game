@@ -1,0 +1,42 @@
+[
+    {
+        "image":"../Assestes/cat.jpeg",
+        "name":"cat"
+    },
+
+
+    
+
+
+    {
+        "image":"../Assestes/coak.jpeg",
+        "name":"coak"
+    },
+
+
+    {
+        "image":"../Assestes/dog.jpeg",
+        "name":"dog"
+    },
+
+
+    {
+        "image":"../Assestes/gorilla.jpeg",
+        "name":"gorilla"
+    },
+
+
+    {
+        "image":"../Assestes/lion.jpeg",
+        "name":"lion"
+    },
+
+
+    {
+        "image":"../Assestes/monkey.jpeg",
+        "name":"monkey"
+    }
+
+
+   
+]

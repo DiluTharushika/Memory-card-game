@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Memory Card Game</title>
+        <link rel="stylesheet" type="text/css" href="Memory.css">
+        </head>
+        <body>
+           <h1>Memory Cards</h1>
+          
+
+
+<div class="description">
+ <p>Moves:<span class="score"></span></p>
+<p>Target Moves: <span class="target-moves">20</span></p>
+    <p>Time Left: <span class="time-left">10</span>s</p>
+</div>
+
+    <div class="actions">
+        <button class="start-button" onclick="startGame()">Start</button>
+       
+        <button onclick="restart()">Restart</button>
+      
+    </div>
+    
+    <div class="grid-container-wrapper">
+        <div class="grid-container"></div>
+        <div class="message" id="message" style="display: none;"></div>
+    </div>
+
+
+    
+    <button class="mute-button">🔊</button>
+    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
+
+
+
+   <!-- Audio elements -->
+   <audio id="background-music" src="Assestes/StockTune-Golden Summer Days Ahead_1723657516.mp3" loop></audio>
+   <audio id="flip-sound" src="Assestes/pen-click-99025.mp3"></audio>
+   <audio id="win-sound" src="Assestes/you-win-sequence-3-183950.mp3"></audio>
+   <audio id="lose-sound" src="Assestes/game-over-39-199830.mp3"></audio>
+   <audio id="match-sound" src="Assestes/achive-sound-132273.mp3"></audio>
+
+   <script src="Memory.js"></script>
+        </body>
+    </html>

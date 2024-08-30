@@ -1,0 +1,233 @@
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes appear {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceAndRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1) rotate(10deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+        background-color: #062a30;
+    font-family: Arial, sans-serif;
+    color: #c8ccd1; /* Dark text for readability */
+   
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    
+   
+        padding-top: 20px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 89px;
+        
+        background: linear-gradient(to right, #17f7ff, #e3fc07); /* Gradient background */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; /* Makes the gradient text color */
+        /* Darker shadow for better contrast */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+        margin: 0;
+        animation: bounceAndRotate 2s ease-out, fadeIn 2s ease-out;
+   
+}
+p{
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 20px;
+   
+   /* text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-out;*/
+}
+.description{
+    background: linear-gradient(to right, #053b42, #1d6774); /* Semi-transparent background */
+    border-radius: 25px;
+    color: #c8ccd1; /* Light text color */
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+    animation: slideIn 1s ease-out; /* Slide-in animation */
+    width:20%;
+    max-width: 600px;
+    margin: 10px auto;
+    margin-top: 30px;
+}
+
+.actions{
+    display:flex;
+    gap:305px;
+    padding: 25px;
+    justify-content: center;
+    animation: fadeIn 1.5s ease-out;
+}
+.actions button{
+
+
+
+    padding: 12px 30px;
+    font-size: 30px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+  box-shadow: 0 4px 6px rgba(241, 233, 233, 0.2), 0 1px 3px rgba(226, 214, 214, 0.1); /* 3D shadow effect */
+  background: linear-gradient(145deg, #04606360, #04374e);
+    color: rgb(235, 222, 222);
+    border: 5px solid #628288; /* Green */
+    transition: background-color 0.4s ease;
+    
+   
+}
+.actions button:hover {
+    /* Darker Blue */
+    background-color: #040e0d48;
+    transform: translateY(-2px) scale(1.05); 
+}
+.grid-container-wrapper {
+    position: relative;
+    width: max-content;
+    margin: 0 auto;
+    background-color: #040e0d48; /* Light Blue background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 255);
+    animation: appear 2s ease-out
+}
+
+.grid-container{
+    display: grid;
+    justify-content: center;
+    grid-gap: 16px;
+    grid-template-columns: repeat(4,140px);
+    grid-template-rows: repeat(2,calc(140px/2*3));
+    animation: fadeIn 2s ease-out;
+}
+.card{
+    height: calc(140px/2*3);
+    width: 140px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+}
+
+.front-image{
+    width: 140px;
+    height: 210px;
+    
+   
+
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card.flipped{
+    transform: rotateY(180deg);
+
+}
+
+.front,
+.back{
+    backface-visibility: hidden;
+    position:absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+}
+.card .front{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+
+
+
+}
+
+.card .back{
+   
+    background-position: center center;
+    background-size: cover;
+   background-image: url('../Assestes/LightBlue.jpeg');
+
+}
+
+
+.message {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    animation: fadeIn 2s ease-out;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(19, 18, 18, 0.8); /* Semi-transparent Black */
+    color: #f15b5b;
+   
+    font-size: 100px;
+    text-align: center;
+    z-index: 10; /* Ensure it appears above other elements */
+    
+}
+
+.mute-button {
+    font-size: 25px;
+    cursor: pointer;
+    background-color: #0c4d42; /* Button color */
+    color: #bb9696;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.mute-button:hover {
+    background-color: #11a75c; /* Darker shade for hover effect */
+}
+
+.volume-slider {
+    width: 130px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
