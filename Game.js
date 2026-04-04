@@ -148,8 +148,8 @@ function renderCards() {
     const config = CONFIG[currentState.gridType];
     
     // Set grid columns and rows dynamically for flexible sizing
-    gridContainer.style.gridTemplateColumns = `repeat(${config.cols}, minmax(0, 1fr))`;
-    gridContainer.style.gridTemplateRows = `repeat(${config.rows}, minmax(0, 1fr))`;
+    gridContainer.style.gridTemplateColumns = `repeat(${config.cols}, auto)`;
+    gridContainer.style.gridTemplateRows = `repeat(${config.rows}, auto)`;
     
     currentState.cards.forEach((card, index) => {
         const cardEl = document.createElement("div");
@@ -200,6 +200,8 @@ function checkMatch() {
         currentState.matches++;
         currentState.score += 10;
         scoreEl.textContent = currentState.score;
+        currentState.firstCard.classList.add("matched");
+        currentState.secondCard.classList.add("matched");
         playSFX("match");
         resetBoard();
         checkWin();

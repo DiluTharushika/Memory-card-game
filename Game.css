@@ -143,32 +143,32 @@ button.secondary:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
+    padding: 1rem;
+    overflow-y: auto;
 }
 
 .grid-container {
     display: grid;
-    gap: 6px; /* Tighten gap */
-    width: 100%;
-    height: 100%;
+    gap: 12px; /* Increased for professional breathing room */
     justify-content: center;
     align-content: center;
-    padding: 0.5rem;
+    margin: auto;
+    transition: var(--transition);
 }
 
 /* Card Styling */
 .card {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: clamp(60px, 15vw, 120px);
     aspect-ratio: 4/5;
     perspective: 1000px;
     cursor: pointer;
-    border-radius: 0.5rem;
-    min-height: 35px; 
-    max-height: 12vh; /* Extreme compact mode */
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover:not(.flipped):not(.matched) {
+    transform: translateY(-5px) scale(1.02);
 }
 
 .card-inner {
@@ -197,7 +197,13 @@ button.secondary:hover {
     border-radius: 0.75rem;
     border: 1px solid var(--glass-border);
     overflow: hidden;
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.matched .front {
+    border-color: #22c55e;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
 }
 
 .front {
@@ -214,18 +220,12 @@ button.secondary:hover {
     object-fit: contain; /* Ensure full image is visible */
 }
 
-.back {
-    background: var(--card-back);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .back::after {
     content: '?';
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.15);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 /* Compact Audio Bar in Flex Flow */
@@ -355,7 +355,8 @@ input[type="range"]::-webkit-slider-thumb {
     }
 }
 
-@media (max-height: 650px) {
+@media (max-height: 700px) {
     h1 { font-size: 1.2rem; }
-    .card { max-height: 11vh; }
+    .card { width: clamp(50px, 12vh, 100px); }
+    .grid-container { gap: 8px; }
 }
