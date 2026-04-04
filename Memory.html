@@ -1,45 +1,72 @@
-<html>
-    <head>
-        <title>Memory Card Game</title>
-        <link rel="stylesheet" type="text/css" href="Memory.css">
-        </head>
-        <body>
-           <h1>Memory Cards</h1>
-          
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Memory Card Game | Professional Edition</title>
+    <link rel="stylesheet" href="Game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Memory Master</h1>
 
+        <div class="difficulty-selector">
+            <button class="diff-btn active" data-grid="4x3">Easy</button>
+            <button class="diff-btn" data-grid="4x4">Med</button>
+            <button class="diff-btn" data-grid="5x4">Hard</button>
+        </div>
 
-<div class="description">
- <p>Moves:<span class="score"></span></p>
-<p>Target Moves: <span class="target-moves">20</span></p>
-    <p>Time Left: <span class="time-left">10</span>s</p>
-</div>
+        <div class="description">
+            <p>Score: <span class="score">0</span></p>
+            <p>Moves: <span class="moves">0</span></p>
+            <p>Target: <span class="target-moves">20</span></p>
+            <p>Time: <span class="time-left">45</span>s</p>
+        </div>
 
-    <div class="actions">
-        <button class="start-button" onclick="startGame()">Start</button>
-       
-        <button onclick="restart()">Restart</button>
-      
+        <!-- Compact Controls Bar -->
+        <div class="controls-bar">
+            <div class="actions">
+                <button class="start-button">Start</button>
+                <button class="restart-button secondary">Reset</button>
+            </div>
+            <div class="audio-controls">
+                <div class="audio-item">
+                    <button class="mute-btn">🔊</button>
+                    <input type="range" class="bgm-slider" min="0" max="1" step="0.1" value="0.3">
+                </div>
+                <div class="audio-item">
+                    <span style="font-size: 0.7rem; color: var(--text-secondary);">FX</span>
+                    <input type="range" class="sfx-slider" min="0" max="1" step="0.1" value="0.7">
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container-wrapper">
+            <div class="grid-container">
+                <!-- Cards will be injected here -->
+            </div>
+        </div>
     </div>
-    
-    <div class="grid-container-wrapper">
-        <div class="grid-container"></div>
-        <div class="message" id="message" style="display: none;"></div>
+
+    <!-- Win/Loss Modals -->
+    <div class="message-overlay" id="message-overlay">
+        <div class="modal">
+            <h2 id="modal-title">You Won!</h2>
+            <p id="modal-message">Great job! You finished in 30 seconds.</p>
+            <button class="restart-button">Play Again</button>
+        </div>
     </div>
 
+    <!-- Audio elements -->
+    <audio id="bg-music" src="Assestes/StockTune-Golden Summer Days Ahead_1723657516.mp3" loop></audio>
+    <audio id="flip-sound" src="Assestes/pen-click-99025.mp3"></audio>
+    <audio id="win-sound" src="Assestes/you-win-sequence-3-183950.mp3"></audio>
+    <audio id="lose-sound" src="Assestes/game-over-39-199830.mp3"></audio>
+    <audio id="match-sound" src="Assestes/achive-sound-132273.mp3"></audio>
 
-    
-    <button class="mute-button">🔊</button>
-    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
-
-
-
-   <!-- Audio elements -->
-   <audio id="background-music" src="Assestes/StockTune-Golden Summer Days Ahead_1723657516.mp3" loop></audio>
-   <audio id="flip-sound" src="Assestes/pen-click-99025.mp3"></audio>
-   <audio id="win-sound" src="Assestes/you-win-sequence-3-183950.mp3"></audio>
-   <audio id="lose-sound" src="Assestes/game-over-39-199830.mp3"></audio>
-   <audio id="match-sound" src="Assestes/achive-sound-132273.mp3"></audio>
-
-   <script src="Memory.js"></script>
-        </body>
-    </html>
+    <script src="Game.js"></script>
+</body>
+</html>

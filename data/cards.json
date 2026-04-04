@@ -1,42 +1,13 @@
 [
-    {
-        "image":"../Assestes/cat.jpeg",
-        "name":"cat"
-    },
-
-
-    
-
-
-    {
-        "image":"../Assestes/coak.jpeg",
-        "name":"coak"
-    },
-
-
-    {
-        "image":"../Assestes/dog.jpeg",
-        "name":"dog"
-    },
-
-
-    {
-        "image":"../Assestes/gorilla.jpeg",
-        "name":"gorilla"
-    },
-
-
-    {
-        "image":"../Assestes/lion.jpeg",
-        "name":"lion"
-    },
-
-
-    {
-        "image":"../Assestes/monkey.jpeg",
-        "name":"monkey"
-    }
-
-
-   
+    { "image": "Assestes/cat.jpeg", "name": "cat" },
+    { "image": "Assestes/coak.jpeg", "name": "coak" },
+    { "image": "Assestes/dog.jpeg", "name": "dog" },
+    { "image": "Assestes/gorilla.jpeg", "name": "gorilla" },
+    { "image": "Assestes/lion.jpeg", "name": "lion" },
+    { "image": "Assestes/monkey.jpeg", "name": "monkey" },
+    { "image": "Assestes/pig.jpeg", "name": "pig" },
+    { "image": "Assestes/rabbit.jpeg", "name": "rabbit" },
+    { "image": "Assestes/squeril.jpeg", "name": "squeril" },
+    { "image": "Assestes/tiger.jpeg", "name": "tiger" },
+    { "image": "Assestes/chick with mom.jpeg", "name": "chick" }
 ]
